@@ -15,7 +15,6 @@ hexa = {
     13: "D",
     14: "E",
     15: "F",
-    
     16: "G"
 }
 class Suma(object):
