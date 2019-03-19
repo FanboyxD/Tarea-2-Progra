@@ -30,6 +30,12 @@ class Suma(object):
     def suma_aux(self,num1,num2,acarreo,base):
         if num1==[] and num2==[] and acarreo>=0:
             return [acarreo]
+        if num1==[]:
+            return num2[:-1]+[num2[-1]+acarreo]
+        if num2==[]:
+            return num1[:-1]+[num1[-1]+acarreo]
+        if (num1[-1]+num2[-1]+acarreo) < base:
+            return (self.suma_aux(num1[:-1],num2[:-1],0,base))+[num1[-1]+num2[-1]+acarreo]
         elif (num1[-1]+num2[-1]+acarreo) == base:
             return (self.suma_aux(num1[:-1],num2[:-1],1,base))+[hexa[num1[-1]+num2[-1]+acarreo-base]]
         elif (num1[-1]+num2[-1]+acarreo) > base:
